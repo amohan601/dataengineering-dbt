@@ -1,21 +1,23 @@
 version: 2
 
 sources:
-  - name: staging
+  - name: full_trips
     database:
       dtc-de-course-411602
       # For postgres:
       #database: production
     schema:
-      trips_data_all
+      trips_data_full
 
     tables:
       - name: green_trips_data
       - name:
           yellow_trips_data
+      - name:
+          fhv_trips_data
 
 models:
-    - name: stg_green_tripdata
+    - name: stg_full_trips_green_tripdata
       description: >
         Trip made by green taxis, also known as boro taxis and street-hail liveries.
         Green taxis may respond to street hails,but only in the areas indicated in green on the
@@ -106,7 +108,7 @@ models:
           - name: Total_amount 
             description: The total amount charged to passengers. Does not include cash tips.
 
-    - name: stg_yellow_tripdata
+    - name: stg_full_trips_yellow_tripdata
       description: > 
         Trips made by New York City's iconic yellow taxis. 
         Yellow taxis are the only vehicles permitted to respond to a street hail from a passenger in all five
