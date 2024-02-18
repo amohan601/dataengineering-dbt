@@ -1,0 +1,4 @@
+{% set models_to_generate = codegen.get_models(directory='staging/full_trips/stg_full_trips_fhv_tripdata') %}
+{{ codegen.generate_model_yaml(
+    model_names = models_to_generate
+) }}
