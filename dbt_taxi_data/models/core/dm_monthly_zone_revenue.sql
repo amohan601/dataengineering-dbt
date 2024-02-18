@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 with trips_data as (
-    select * from {{ ref('fact_trips') }}
+    select * from {{ ref('test_trips_fact_trips') }}
 )
     select 
     -- Reveneue grouping 
